@@ -1,0 +1,58 @@
+.AddCartButton_Outer_Container{
+    background-color: aliceblue;
+    position:fixed;
+    width:100%;
+    bottom:0
+}
+
+
+.AddCartButton_Inner_Container{
+    min-height: 105px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Options_Container{
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Item_Title{
+    padding:10px;
+    width: 400px;
+}
+
+.Item_Price{
+    padding:10px;
+    width: 400px;
+}
+
+.Option{
+    padding:10px !important;
+    width: 400px;
+}
+
+.Quantity_Container{
+    padding: 10px
+}
+
+.Quantity{
+    width: 400px;
+}
+
+.Button{
+    width:400px;
+}
+
+.Close_Button_Container{
+    width:100%;
+}
+
+.Close_Button_Container button{
+    float:right;
+}

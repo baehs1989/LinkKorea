@@ -1,0 +1,32 @@
+.UL{
+    list-style: none;
+    padding:0;
+    margin:10px 0 10px 0;
+    font-size: 0.9rem;
+}
+
+.Title{
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.Container{
+    padding-top:1rem;
+    border-top:1px solid rgba(0, 0, 0, 0.12);
+}
+
+.Contact_Container{
+    border-top:1px solid rgba(0, 0, 0, 0.12);
+    display:flex;
+    justify-content: center;
+}
+
+.ContactIcon{
+    display:flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.ContactIcon svg{
+    padding-right:5px;
+}
