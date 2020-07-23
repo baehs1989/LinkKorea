@@ -15,7 +15,7 @@ import styles from './Footer.module.css'
 
 function Copyright() {
     return (
-        <div style={{textAlign:'center'}}>
+        <div className={styles.CopyRight} style={{textAlign:'center'}}>
             <div>
                 BuyCor, Inc. <Link color="inherit" href="#">Terms &amp; Conditions</Link> |  <Link color="inherit" href="#">Privacy Policy</Link>
             </div>
@@ -73,10 +73,10 @@ export default function Footer() {
                         <div className={styles.Title}>Company</div>
                         <ul className={styles.UL}>
                             <li>
-                                <div>About Us</div>
+                                <Link color="inherit" href="#">About Us</Link>
                             </li>
                             <li>
-                                <div>FAQ</div>
+                                <Link color="inherit" href="#">FAQ</Link>
                             </li>
                         </ul>
                     </Grid>
@@ -84,10 +84,10 @@ export default function Footer() {
                         <div className={styles.Title}>Customer Service</div>
                         <ul className={styles.UL}>
                             <li>
-                                <div>Notice</div>
+                                <Link color="inherit" href="#">Notice</Link>
                             </li>
                             <li>
-                                <div>Inquiry</div>
+                                <Link color="inherit" href="#">Inquiry</Link>
                             </li>
                         </ul>
                     </Grid>

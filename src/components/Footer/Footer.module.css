@@ -3,6 +3,7 @@
     padding:0;
     margin:10px 0 10px 0;
     font-size: 0.9rem;
+    line-height: 1.2rem;
 }
 
 .Title{
@@ -29,4 +30,14 @@
 
 .ContactIcon svg{
     padding-right:5px;
+}
+
+.CopyRight{
+    font-weight:600;
+    font-size: 0.9rem;
+}
+
+.CopyRight a{
+    font-style: oblique;
+    color:grey;
 }
