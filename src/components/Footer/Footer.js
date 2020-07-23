@@ -1,6 +1,5 @@
 import React from 'react'
 import Container from '@material-ui/core/Container';
-import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import IconButton from '@material-ui/core/IconButton';
@@ -35,9 +34,19 @@ function Copyright() {
 function Contacts(){
     return (
         <div className={styles.Contact_Container}>
-            <div className={styles.ContactIcon}><EmailIcon/> Email</div>
-            <div className={styles.ContactIcon}><ChatBubbleIcon/> Live Chat</div>
-            <div className={styles.ContactIcon}><CallIcon/> Call: 123-123-1234</div>
+            <Link color="inherit" href="#">
+                <div className={styles.ContactIcon}>
+                    <EmailIcon/> Email
+                </div>
+            </Link>
+            <Link color="inherit" href="#">
+                <div className={styles.ContactIcon}>
+                    <ChatBubbleIcon/> Live Chat
+                </div>
+            </Link>
+            <Link color="inherit" href="#">
+                <div className={styles.ContactIcon}><CallIcon/> Call: 123-123-1234</div>
+            </Link>
         </div>
     )
 }
