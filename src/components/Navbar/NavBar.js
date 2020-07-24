@@ -6,17 +6,12 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-
 import MenuIcon from '@material-ui/icons/Menu';
 import Drawer from '@material-ui/core/Drawer';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
-import List from '@material-ui/core/List';
+
 
 import Cart from '../Cart/Cart'
+import Category from '../Category/Category'
 
 const useStyles = makeStyles((theme) => ({
     toolbar: {
@@ -99,24 +94,7 @@ export default function NavBar(props) {
                 onClose={toggleMenuBar}
             >
                 <div className={clsx(classes.list)}>
-                    <div style={{height:'50px'}}>
-                    </div>
-                    <List>
-                        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                            <ListItem button key={text}>
-                            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                            <ListItemText primary={text} />
-                            </ListItem>
-                        ))}
-                    </List>
-                    <List>
-                        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                            <ListItem button key={text}>
-                            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                            <ListItemText primary={text} />
-                            </ListItem>
-                        ))}
-                    </List>
+                    <Category/>
                 </div>
             </Drawer>
 
