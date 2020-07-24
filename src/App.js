@@ -4,15 +4,14 @@ import './App.css';
 import ItemDetail from './components/ItemDetail/ItemDetail'
 import NavBar from './components/Navbar/NavBar'
 import Footer from './components/Footer/Footer'
+import SlideShow from './components/SlideShow/SlideShow'
 
 function App() {
   return (
       <>
         <NavBar title="BuyKo"/>
         {/* <ItemDetail/> */}
-        <div style={{height:"90vh"}}>
-
-        </div>
+        <SlideShow/>
         <Footer/>
       </>
       
