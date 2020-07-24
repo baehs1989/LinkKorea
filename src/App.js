@@ -10,6 +10,9 @@ function App() {
       <>
         <NavBar title="BuyKo"/>
         {/* <ItemDetail/> */}
+        <div style={{height:"90vh"}}>
+
+        </div>
         <Footer/>
       </>
       
