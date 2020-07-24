@@ -1,3 +1,10 @@
+:root{
+  --primary-color: #6394F8;
+  --primary-hover-color: #517bcf;
+  --light-color: #ABB0BE;
+  --border-light-color: #E8E8E8;
+}
+
 .App {
   text-align: center;
 }

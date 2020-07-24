@@ -13,11 +13,11 @@
 
 .Container{
     padding-top:1rem;
-    border-top:1px solid rgba(0, 0, 0, 0.12);
+    border-top:1px solid var(--border-light-color);
 }
 
 .Contact_Container{
-    border-top:1px solid rgba(0, 0, 0, 0.12);
+    border-top:1px solid var(--border-light-color);
     display:flex;
     justify-content: center;
 }

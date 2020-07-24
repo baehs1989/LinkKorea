@@ -16,12 +16,11 @@ import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import List from '@material-ui/core/List';
 
-
-
+import Cart from '../Cart/Cart'
 
 const useStyles = makeStyles((theme) => ({
     toolbar: {
-      borderBottom: `1px solid rgba(0, 0, 0, 0.12)`,
+      borderBottom: `1px solid var(--border-light-color)`,
     },
     toolbarTitle: {
       flex: 1,
@@ -36,21 +35,11 @@ const useStyles = makeStyles((theme) => ({
     },
     list:{
         width:300
+    },
+    cart:{
+        width:400
     }
 }));
-
-// const sections = [
-//     { title: 'Technology', url: '#' },
-//     { title: 'Design', url: '#' },
-//     { title: 'Culture', url: '#' },
-//     { title: 'Business', url: '#' },
-//     { title: 'Politics', url: '#' },
-//     { title: 'Opinion', url: '#' },
-//     { title: 'Science', url: '#' },
-//     { title: 'Health', url: '#' },
-//     { title: 'Style', url: '#' },
-//     { title: 'Travel', url: '#' },
-// ];
 
 export default function NavBar(props) {
     const classes = useStyles();
@@ -104,21 +93,6 @@ export default function NavBar(props) {
 
             </Toolbar>
 
-            {/* <Toolbar component="nav" variant="dense" className={classes.toolbarSecondary}>
-                {sections.map((section) => (
-                    <Link
-                    color="inherit"
-                    noWrap
-                    key={section.title}
-                    variant="body2"
-                    href={section.url}
-                    className={classes.toolbarLink}
-                    >
-                    {section.title}
-                    </Link>
-                ))}
-            </Toolbar> */}
-
             <Drawer
                 anchor="left"
                 open={openMenuBar}
@@ -147,19 +121,17 @@ export default function NavBar(props) {
             </Drawer>
 
 
+
+
             <Drawer
                 anchor="right"
                 open={openCartBar}
                 onClose={toggleCartBar}
             >
-                <div className={clsx(classes.list)}>
-                    <div>
-                        Cart
-                    </div>
-                </div>
+                <div className={clsx(classes.cart)}>
+                    <Cart/>
+                </div> 
             </Drawer>
-
-
 
 
       </React.Fragment>
