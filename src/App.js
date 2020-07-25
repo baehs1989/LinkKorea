@@ -5,7 +5,7 @@ import './App.css';
 import NavBar from './components/Navbar/NavBar'
 import Footer from './components/Footer/Footer'
 import SlideShow from './components/SlideShow/SlideShow'
-import ProductStack from './components/ProductStack/ProductStack'
+import CategoryPreview from './components/CategoryPreview/CategoryPreview'
 
 function App() {
   return (
@@ -13,7 +13,8 @@ function App() {
         <NavBar title="BuyKo"/>
         {/* <ItemDetail/> */}
         <SlideShow/>
-        <ProductStack/>
+        <CategoryPreview/>
+        <CategoryPreview/>
         <Footer/>
       </>
       
