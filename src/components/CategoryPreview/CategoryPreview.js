@@ -10,7 +10,7 @@ export default function CategoryPreview() {
         <div className={styles.Row}>
             <div className={styles.TopSection}>
                 <span className={styles.Title}>Book</span>
-                <Button variant="contained" color="primary">
+                <Button variant="outlined">
                     SHOP ALL
                 </Button>
             </div>
