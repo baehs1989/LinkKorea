@@ -13,11 +13,7 @@ function App() {
   return (
       <>
         <NavBar title="BuyKo"/>
-        {/* <ItemDetail/> */}
-        {/* <SlideShow/>
-        <CategoryPreview/>
-        <CategoryPreview/> */}
-        <SignUp/>
+        <SignIn/>
         <Footer/>
       </>
       
