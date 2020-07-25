@@ -1,6 +1,7 @@
 .UL{
     list-style: none;
     padding:0;
+    padding-left:7px;
     margin:10px 0 10px 0;
     font-size: 0.9rem;
     line-height: 1.2rem;
