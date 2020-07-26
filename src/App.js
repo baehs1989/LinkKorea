@@ -4,6 +4,8 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+import ScrollToTop from 'react-router-scroll-top'
+
 import './App.css';
 
 
@@ -25,32 +27,35 @@ function App() {
 
   return (
       <Router>
-        <NavBar title="BuyKo"/>
-        
+        <ScrollToTop>
+          <NavBar title="BuyKo"/>
+          
 
-        <Switch>
-          <Route path="/signin">
-            <SignIn/>
-          </Route>
+          <Switch>
+            <Route path="/signin">
+              <SignIn/>
+            </Route>
 
-          <Route path="/signup">
-            <SignUp/>
-          </Route>
+            <Route path="/signup">
+              <SignUp/>
+            </Route>
 
-          <Route path="/category/:name" component={CategoryPage}/>
+            <Route path="/category/:name" component={CategoryPage}/>
 
-          <Route path="/product/:id" render={() => <ItemDetail toggleFooter={toggleFooter}/>}/>
+            <Route path="/product/:id" render={() => <ItemDetail toggleFooter={toggleFooter}/>}/>
 
-          <Route path="/">
-            <SlideShow />
-            <CategoryPreview/>
-            <CategoryPreview/>
-          </Route>
-        </Switch>
+            <Route path="/">
+              <SlideShow />
+              <CategoryPreview/>
+              <CategoryPreview/>
+            </Route>
+          </Switch>
 
-        {
-          footer && <Footer/>
-        }
+          {
+            footer && <Footer/>
+          }
+        </ScrollToTop>
+
         
       </Router>
       
