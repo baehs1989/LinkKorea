@@ -13,19 +13,19 @@ export default function SlideShow() {
     return (
         <div className={styles.SlideContainer}>
           <Slide {...fadeProperties}>
-            <div className={styles.Slide}>
+            <div className={styles.Slide} style={{'backgroundImage': 'url(https://source.unsplash.com/random)'}}>
                 <div>
-                    <span>Slide 1</span>
+                    <span>Ad 1</span>
                 </div>
             </div>
-            <div className={styles.Slide}>
+            <div className={styles.Slide} style={{'backgroundImage': 'url(https://source.unsplash.com/random)'}}>
                 <div>
-                    <span>Slide 2</span>
+                    <span>Ad 2</span>
                 </div>
             </div>
-            <div className={styles.Slide}>
+            <div className={styles.Slide} style={{'backgroundImage': 'url(https://source.unsplash.com/random)'}}>
                 <div>
-                    <span>Slide 3</span>
+                    <span>Ad 3</span>
                 </div>
             </div>
           </Slide>

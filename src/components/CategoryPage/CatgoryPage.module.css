@@ -4,9 +4,20 @@
     display:flex;
     justify-content: center;
     align-items: center;
+
+    position: relative;
+}
+
+.HeaderBackground{
+    position: absolute;
+    width:100%;
+    height:100%;
+    background-color: var(--light-color);
+    opacity:0.4;
 }
 
 .CategoryTitle{
+    z-index: 100;
     font-weight: bold;
     font-size: 2rem;
     text-transform: capitalize;

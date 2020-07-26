@@ -22,7 +22,7 @@ const styleMapp={
         color:'white'
     },
     'kids':{
-        backgroundPosition: "center 30%"
+        backgroundPosition: "center 30%",
     }
 
 }
@@ -33,6 +33,9 @@ export default function CategoryPage() {
     return (
         <div>
             <div className={styles.Header} style={{backgroundImage:`url("/assets/images/${name}.jpg")`, ...styleMapp[name]}}>
+                <div className={styles.HeaderBackground}>
+
+                </div>
                 <div className={styles.CategoryTitle}>
                     {name}
                 </div>
