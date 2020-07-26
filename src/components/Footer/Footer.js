@@ -9,7 +9,6 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import EmailIcon from '@material-ui/icons/Email';
 import ChatBubbleIcon from '@material-ui/icons/ChatBubble';
 import CallIcon from '@material-ui/icons/Call';
-import {useHistory} from 'react-router-dom';
 
 import styles from './Footer.module.css'
 

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useCallback} from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -21,9 +21,9 @@ import CategoryPage from './components/CategoryPage/CategoryPage'
 function App() {
   const [footer, setFooter] = useState(true)
 
-  const toggleFooter = () => {
+  const toggleFooter = useCallback(()=>{
     setFooter(prev=>!prev)
-  }
+  }, [])
 
   return (
       <Router>

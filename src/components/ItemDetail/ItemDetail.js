@@ -18,10 +18,10 @@ export default function ItemDetail({toggleFooter}) {
         return () => {
             toggleFooter()
         }
-    }, [])
+    }, [toggleFooter])
 
     const onMyFrameLoad = () => {
-        var iframe = document.querySelector('iframe.gmarket_iframe');
+        // var iframe = document.querySelector('iframe.gmarket_iframe');
     }
 
     const onAddCart = () => {
