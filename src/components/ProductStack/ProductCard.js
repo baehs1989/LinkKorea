@@ -16,13 +16,13 @@ export default function ProductCard() {
             </div> */}
             <div className={styles.TopSection}>
                 <div className={styles.ImageOuter}>
-                    <img className={styles.Image} src="https://www.ctshirts.com/on/demandware.static/-/Sites-ctshirts-master/default/dw541f2046/hi-res/CSR0749WHT_a.jpg" alt="item1" />
+                    <img className={styles.Image} src="https://cdn-image02.casetify.com/usr/8746/1688746/~v14/6705211_iphone11__color_white_16000268.png.560x560-w.m80.jpg" alt="item1" />
                     <div className={styles.DetailButton}>
                         Show Detail
                     </div>
                 </div>
                 <div className={styles.ProductTitle}>
-                    아이폰 파스텔 핸드폰 목걸이 폰스트랩 케이스 김혜수
+                    아이폰 파스텔 핸드폰 목걸이 폰스트랩 케이스
                 </div>
             </div>
             <div className={styles.Descriptions}>
