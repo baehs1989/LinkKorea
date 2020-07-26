@@ -25,10 +25,12 @@ function App() {
     setFooter(prev=>!prev)
   }, [])
 
+  document.title="링크코리아"
+
   return (
       <Router>
         <ScrollToTop>
-          <NavBar title="BuyKo"/>
+          <NavBar title="LinkKorea"/>
           
 
           <Switch>

@@ -16,12 +16,12 @@ function Copyright() {
     return (
         <div className={styles.CopyRight} style={{textAlign:'center'}}>
             <div>
-                BuyCor, Inc. <Link color="inherit" href="#">Terms &amp; Conditions</Link> |  <Link color="inherit" href="#">Privacy Policy</Link>
+                LinkKorea, Inc. <Link color="inherit" href="#">Terms &amp; Conditions</Link> |  <Link color="inherit" href="#">Privacy Policy</Link>
             </div>
             <div>
                 {'Copyright © '}
                 <Link color="inherit" href="#">
-                    BuyCor
+                    LinkKorea
                 </Link>{' '}
                 {new Date().getFullYear()}
                 {'.'}
