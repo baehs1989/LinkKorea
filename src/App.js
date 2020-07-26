@@ -8,12 +8,13 @@ import SlideShow from './components/SlideShow/SlideShow'
 import CategoryPreview from './components/CategoryPreview/CategoryPreview'
 import SignIn from './components/SignIn/SignIn'
 import SignUp from './components/SignUp/SignUp'
+import CategoryPage from './components/CategoryPage/CategoryPage'
 
 function App() {
   return (
       <>
         <NavBar title="BuyKo"/>
-        <SignIn/>
+        <CategoryPage/>
         <Footer/>
       </>
       

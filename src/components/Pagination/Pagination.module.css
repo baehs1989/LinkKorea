@@ -1,0 +1,155 @@
+.Container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Previous,
+.Next{
+    font-size: 2rem !important;
+}
+
+.Previous:hover{
+    color:grey;
+    cursor:pointer;
+    
+}
+
+.Next{
+    transform: rotate(180deg);
+    cursor:pointer;
+}
+
+.Next:hover{
+    color:grey;
+}
+
+.Counter{
+    font-size:1.3rem;
+}
+/* .Container{
+    
+}
+
+button.Paginate{
+    -webkit-appearance: none;
+    background: transparent;
+    border: 0;
+    outline: 0;
+}
+
+.Paginate {
+    position: relative;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transform: translate3d(0, 0, 0);
+    -webkit-filter: drop-shadow(0 2px 0px rgba(0, 0, 0, 0.2));
+}
+
+.Paginate i {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    width: 15px;
+    height: 5px;
+    border-radius: 2.5px;
+    background: black;
+    transition: all 0.15s ease;
+}
+
+.Paginate.Left {
+    right: 1%;
+}
+
+.Paginate.Left i {
+    transform-origin: 0% 50%;
+}
+
+.Paginate.Left i:first-child {
+    transform: translate(0, -1px) rotate(40deg);
+}
+
+.Paginate.Left i:last-child {
+    transform: translate(0, 1px) rotate(-40deg);
+}
+
+.Paginate.Left:hover i:first-child {
+    transform: translate(0, -1px) rotate(30deg);
+}
+.Paginate.Left:hover i:last-child {
+    transform: translate(0, 1px) rotate(-30deg);
+}
+.Paginate.Left:active i:first-child {
+    transform: translate(1px, -1px) rotate(25deg);
+}
+.Paginate.Left:active i:last-child {
+    transform: translate(1px, 1px) rotate(-25deg);
+}
+
+.Paginate.Left[data-state=disabled] i:first-child {
+    transform: translate(-5px, 0) rotate(0deg);
+}
+.Paginate.Left[data-state=disabled] i:last-child {
+    transform: translate(-5px, 0) rotate(0deg);
+}
+.Paginate.Left[data-state=disabled]:hover i:first-child {
+    transform: translate(-5px, 0) rotate(0deg);
+}
+.Paginate.Left[data-state=disabled]:hover i:last-child {
+    transform: translate(-5px, 0) rotate(0deg);
+}
+.Paginate.Right {
+
+}
+.Paginate.Right i {
+    transform-origin: 100% 50%;
+}
+.Paginate.Right i:first-child {
+    transform: translate(0, 1px) rotate(40deg);
+}
+.Paginate.Right i:last-child {
+    transform: translate(0, -1px) rotate(-40deg);
+}
+.Paginate.Right:hover i:first-child {
+    transform: translate(0, 1px) rotate(30deg);
+}
+.Paginate.Right:hover i:last-child {
+    transform: translate(0, -1px) rotate(-30deg);
+}
+.Paginate.Right:active i:first-child {
+    transform: translate(1px, 1px) rotate(25deg);
+}
+.Paginate.Right:active i:last-child {
+    transform: translate(1px, -1px) rotate(-25deg);
+}
+.Paginate.Right[data-state=disabled] i:first-child {
+    transform: translate(5px, 0) rotate(0deg);
+}
+.Paginate.Right[data-state=disabled] i:last-child {
+    transform: translate(5px, 0) rotate(0deg);
+}
+.Paginate.Right[data-state=disabled]:hover i:first-child {
+    transform: translate(5px, 0) rotate(0deg);
+}
+.Paginate.Right[data-state=disabled]:hover i:last-child {
+    transform: translate(5px, 0) rotate(0deg);
+}
+.Paginate[data-state=disabled] {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.Counter {
+    position: absolute;
+    width: 100%;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    font-size: 1rem;
+    text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.2);
+    color: black;
+} */

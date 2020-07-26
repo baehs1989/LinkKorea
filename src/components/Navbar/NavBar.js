@@ -17,6 +17,10 @@ import Category from '../Category/Category'
 const useStyles = makeStyles((theme) => ({
     toolbar: {
       borderBottom: `1px solid var(--border-light-color)`,
+      position:'sticky',
+      top:0,
+      zIndex:100,
+      backgroundColor:'white'
     },
     toolbarTitle: {
       flex: 1,
@@ -80,7 +84,7 @@ export default function NavBar(props) {
                     noWrap
                     className={classes.toolbarTitle}
                 >
-                    {title}
+                        {title}              
                 </Typography>
 
                 {/* <Button variant="outlined" size="small">
