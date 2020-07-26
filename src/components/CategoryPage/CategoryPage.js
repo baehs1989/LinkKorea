@@ -13,12 +13,15 @@ export default function CategoryPage() {
                     Book
                 </div>
             </div>
-            <div className={styles.ToolBar}>
-                <PageToolBar/>
+            <div className={styles.Body}>
+                <div className={styles.ToolBar}>
+                    <PageToolBar/>
+                </div>
+                <div className={styles.ProductList}>
+                    <ProductStack/>
+                </div>
             </div>
-            <div className={styles.ProductList}>
-                <ProductStack/>
-            </div>
+
         </div>
     )
 }

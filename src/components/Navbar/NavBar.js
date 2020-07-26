@@ -24,6 +24,7 @@ const useStyles = makeStyles((theme) => ({
     },
     toolbarTitle: {
       flex: 1,
+      textAlign:'left'
     },
     toolbarSecondary: {
       justifyContent: 'space-between',
@@ -77,7 +78,7 @@ export default function NavBar(props) {
                 </IconButton>
 
                 <Typography
-                    component="h2"
+                    component="div"
                     variant="h5"
                     color="inherit"
                     align="center"
