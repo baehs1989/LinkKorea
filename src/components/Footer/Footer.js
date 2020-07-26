@@ -57,7 +57,7 @@ export default function Footer() {
             <Contacts/>
             <Container maxWidth="lg" className={styles.Container}>
                 <Grid container>
-                    <Grid item xs={3}>
+                    <Grid item xs={6} sm={3}>
                         <div className={styles.Title}>Hours</div>
                         <ul className={styles.UL}>
                             <li>
@@ -78,7 +78,7 @@ export default function Footer() {
                             </li>
                         </ul>
                     </Grid>
-                    <Grid item xs={3}>
+                    <Grid item xs={6} sm={3}>
                         <div className={styles.Title}>Company</div>
                         <ul className={styles.UL}>
                             <li>
@@ -89,7 +89,7 @@ export default function Footer() {
                             </li>
                         </ul>
                     </Grid>
-                    <Grid item xs={3}>
+                    <Grid item xs={6} sm={3}>
                         <div className={styles.Title}>Customer Service</div>
                         <ul className={styles.UL}>
                             <li>
@@ -98,9 +98,12 @@ export default function Footer() {
                             <li>
                                 <Link color="inherit" href="#">Inquiry</Link>
                             </li>
+                            <li>
+                                <Link color="inherit" href="#">Reviews</Link>
+                            </li>
                         </ul>
                     </Grid>
-                    <Grid item xs={3}>
+                    <Grid item xs={6} sm={3}>
                         <div className={styles.Title}>Connect</div>
                         <IconButton>
                             <InstagramIcon/>

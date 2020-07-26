@@ -5,6 +5,10 @@
   --border-light-color: #E8E8E8;
 }
 
+*{
+  font-family: 'Inconsolata', monospace;
+}
+
 .App {
   text-align: center;
 }

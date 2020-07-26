@@ -2,17 +2,17 @@ import React from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
-import Link from '@material-ui/core/Link';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import {Link} from 'react-router-dom'
 
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    height: '85vh',
+    height: '630px',
   },
   image: {
     backgroundImage: 'url(https://source.unsplash.com/random)',
@@ -34,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
   },
   form: {
     width: '100%', // Fix IE 11 issue.
+    height: '100%',
     marginTop: theme.spacing(1),
   },
   submit: {
@@ -127,7 +128,7 @@ export default function SignUp() {
                 </Button>
                 <Grid container justify="flex-end">
                     <Grid item>
-                    <Link href="#" variant="body2">
+                    <Link to="/signin" variant="body2" style={{color:'var(--primary-color)', textDecoration:'none'}}>
                         Already have an account? Sign in
                     </Link>
                     </Grid>
