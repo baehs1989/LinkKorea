@@ -3,3 +3,8 @@
     position: absolute;
     width: 100%;
 }
+
+.AuthBar{
+    width: 100%;
+    text-align: right;
+}

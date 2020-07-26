@@ -44,6 +44,20 @@ const useStyles = makeStyles((theme) => ({
     },
     cart:{
         width:400
+    },
+    authBar:{
+        width:'100%',
+        textAlign:'right',
+        padding: "10px 1rem",
+        boxSizing:'border-box',
+        borderBottom:'1px solid var(--border-light-color)',
+        "& a ":{
+            textDecoration:'none',
+            color: 'var(--primary-color)',
+            marginLeft: '0.5rem;',
+            marginRight: '0.5rem;',
+            cursor:'pointer'
+        }
     }
 }));
 
@@ -72,6 +86,10 @@ export default function NavBar(props) {
 
     return (
         <React.Fragment>
+            <div className={classes.authBar}>
+                <Link to="/signup">Sign Up</Link>
+                <Link to="/signin">Login</Link>
+            </div>
             <Toolbar className={classes.toolbar}>
 
                 <IconButton
