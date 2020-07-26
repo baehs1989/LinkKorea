@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Button from '@material-ui/core/Button';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -10,13 +10,18 @@ import CloseIcon from '@material-ui/icons/Close';
 import classes from './ItemDetail.module.css';
 
 
-export default function ItemDetail() {
+export default function ItemDetail({toggleFooter}) {
     const [open, setOpen] = useState(false)
 
+    useEffect(() => {
+        toggleFooter();
+        return () => {
+            toggleFooter()
+        }
+    }, [])
 
     const onMyFrameLoad = () => {
         var iframe = document.querySelector('iframe.gmarket_iframe');
-        console.log(iframe)
     }
 
     const onAddCart = () => {

@@ -1,9 +1,16 @@
 import React from 'react'
 import styles from './ProductCard.module.css'
+import {useHistory} from 'react-router-dom'
 
 export default function ProductCard() {
+    let history = useHistory()
+
+    var onSelect = () => {
+        history.push('/product/2')
+    }
+
     return (
-        <div className={styles.Card}>
+        <div className={styles.Card} onClick={onSelect}>
             {/* <div className={styles.Badge}>
                 TEST
             </div> */}

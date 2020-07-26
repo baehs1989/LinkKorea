@@ -12,8 +12,14 @@ export default function Category({onSelect}) {
     let history = useHistory();
 
     const onCategorySelect = (text) =>{
+        if (text === 'Home') {
+            history.push('/')
+            onSelect();
+            return
+        }
+
         history.push('/category/'+text.toLowerCase())
-        onSelect();
+        onSelect()
     }
 
     return (
@@ -23,7 +29,7 @@ export default function Category({onSelect}) {
             </div> 
 
             <List>
-                {['Book', 'Fasion', 'Living', 'Beauty', 'Kids'].map((text, index) => (
+                {['Home', 'Book', 'Fashion', 'Living', 'Beauty', 'Kids'].map((text, index) => (
                     <ListItem button key={text} className={styles.CategoryItem} onClick={()=>onCategorySelect(text)}>
                         <ListItemText primary={text} />
                     </ListItem>

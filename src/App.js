@@ -1,13 +1,13 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
 } from "react-router-dom";
 import './App.css';
 
 
-// import ItemDetail from './components/ItemDetail/ItemDetail'
+import ItemDetail from './components/ItemDetail/ItemDetail'
 import NavBar from './components/Navbar/NavBar'
 import Footer from './components/Footer/Footer'
 import SlideShow from './components/SlideShow/SlideShow'
@@ -17,6 +17,12 @@ import SignUp from './components/SignUp/SignUp'
 import CategoryPage from './components/CategoryPage/CategoryPage'
 
 function App() {
+  const [footer, setFooter] = useState(true)
+
+  const toggleFooter = () => {
+    setFooter(prev=>!prev)
+  }
+
   return (
       <Router>
         <NavBar title="BuyKo"/>
@@ -26,10 +32,15 @@ function App() {
           <Route path="/signin">
             <SignIn/>
           </Route>
+
           <Route path="/signup">
             <SignUp/>
           </Route>
-          <Route path="/category/:name" children={<CategoryPage/>}/>
+
+          <Route path="/category/:name" component={CategoryPage}/>
+
+          <Route path="/product/:id" render={() => <ItemDetail toggleFooter={toggleFooter}/>}/>
+
           <Route path="/">
             <SlideShow />
             <CategoryPreview/>
@@ -37,7 +48,10 @@ function App() {
           </Route>
         </Switch>
 
-        <Footer/>
+        {
+          footer && <Footer/>
+        }
+        
       </Router>
       
   )
