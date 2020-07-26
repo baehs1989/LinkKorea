@@ -1,6 +1,7 @@
 import React from 'react'
 import {useParams} from "react-router-dom";
 
+import PageContainer from '../../hoc/PageContainer'
 import ProductStack from '../ProductStack/ProductStack';
 import PageToolBar from '../PageToolBar/PageToolBar';
 
@@ -31,24 +32,27 @@ export default function CategoryPage() {
     let {name} = useParams()
 
     return (
-        <div>
-            <div className={styles.Header} style={{backgroundImage:`url("/assets/images/${name}.jpg")`, ...styleMapp[name]}}>
-                <div className={styles.HeaderBackground}>
+        <PageContainer>
+            <div className={styles.Container}>
+                <div className={styles.Header} style={{backgroundImage:`url("/assets/images/${name}.jpg")`, ...styleMapp[name]}}>
+                    <div className={styles.HeaderBackground}>
 
+                    </div>
+                    <div className={styles.CategoryTitle}>
+                        {name}
+                    </div>
                 </div>
-                <div className={styles.CategoryTitle}>
-                    {name}
+                <div className={styles.Body}>
+                    <div className={styles.ToolBar}>
+                        <PageToolBar/>
+                    </div>
+                    <div className={styles.ProductList}>
+                        <ProductStack/>
+                    </div>
                 </div>
-            </div>
-            <div className={styles.Body}>
-                <div className={styles.ToolBar}>
-                    <PageToolBar/>
-                </div>
-                <div className={styles.ProductList}>
-                    <ProductStack/>
-                </div>
-            </div>
 
-        </div>
+            </div>
+        </PageContainer>
+
     )
 }

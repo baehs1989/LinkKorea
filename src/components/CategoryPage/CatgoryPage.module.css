@@ -1,3 +1,7 @@
+.Container{
+    width: 100%;
+}
+
 .Header{
     background-image: url('/assets/images/book.jpg');
     height: 25vh;

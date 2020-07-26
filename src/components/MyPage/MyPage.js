@@ -7,6 +7,7 @@ import Tab from '@material-ui/core/Tab';
 
 import MyOrders from './MyOrders/MyOrders'
 import ShippingAddress from './ShippingAddress/ShippingAddress'
+import MyPoint from './MyPoint/MyPoint'
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -83,7 +84,7 @@ export default function ScrollableTabsButtonAuto() {
         <ShippingAddress/>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Points
+        <MyPoint/>
       </TabPanel>
       <TabPanel value={value} index={3}>
         Messages

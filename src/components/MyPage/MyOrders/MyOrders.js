@@ -13,6 +13,7 @@ import Select from '@material-ui/core/Select';
 import Grid from '@material-ui/core/Grid'
 import TablePagination from '@material-ui/core/TablePagination';
 
+import PageContainer from '../../../hoc/PageContainer'
 import styles from './MyOrders.module.css'
 
 const StyledTableCell = withStyles((theme) => ({
@@ -44,7 +45,8 @@ const rows = [
 
 const useStyles = makeStyles({
     container:{
-        padding:'1rem'
+        padding:'1rem',
+        width: '100%'
     },
     table: {
         minWidth: 700,
@@ -55,75 +57,77 @@ export default function CustomizedTables() {
   const classes = useStyles();
 
   return (
-    <div className={classes.container}>
-        <Grid container justify="space-between" className={styles.ToolBar}>
-            <Grid item xs={12} sm={4}>
-                <input className={styles.SearchInput} type="text" placeholder={"Search"}/>
-            </Grid>
+    <PageContainer>
+      <div className={classes.container}>
+          <Grid container justify="space-between" className={styles.ToolBar}>
+              <Grid item xs={12} sm={4}>
+                  <input className={styles.SearchInput} type="text" placeholder={"Search"}/>
+              </Grid>
 
-            <Grid container item justify="flex-end" xs={12} sm={6}>
-                <table>
-                    <tbody>
-                        <tr>
-                            <td>
-                                Status:
-                            </td>
-                            <td>
-                            <FormControl variant="outlined">
-                                <Select
-                                    value={1}
-                                    className={styles.Select}
-                                >
-                                    <MenuItem value={1}>Newest</MenuItem>
-                                    <MenuItem value={2}>Price: Low to High</MenuItem>
-                                    <MenuItem value={3}>Price: High to Low</MenuItem>
-                                </Select>
-                            </FormControl>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </Grid>
-        </Grid>
+              <Grid container item justify="flex-end" xs={12} sm={6}>
+                  <table>
+                      <tbody>
+                          <tr>
+                              <td>
+                                  Status:
+                              </td>
+                              <td>
+                              <FormControl variant="outlined">
+                                  <Select
+                                      value={1}
+                                      className={styles.Select}
+                                  >
+                                      <MenuItem value={1}>Newest</MenuItem>
+                                      <MenuItem value={2}>Price: Low to High</MenuItem>
+                                      <MenuItem value={3}>Price: High to Low</MenuItem>
+                                  </Select>
+                              </FormControl>
+                              </td>
+                          </tr>
+                      </tbody>
+                  </table>
+              </Grid>
+          </Grid>
 
-        <TableContainer component={Paper}>
-            <Table className={classes.table} aria-label="customized table">
-                <TableHead>
-                <TableRow>
-                    <StyledTableCell>Item #</StyledTableCell>
-                    <StyledTableCell>Item Details</StyledTableCell>
-                    <StyledTableCell align="center">Qty</StyledTableCell>
-                    <StyledTableCell align="center">Price</StyledTableCell>
-                    <StyledTableCell align="center">Order Date</StyledTableCell>
-                    <StyledTableCell align="center">Order Status</StyledTableCell>
-                    <StyledTableCell align="center">Note</StyledTableCell>
-                </TableRow>
-                </TableHead>
-                <TableBody>
-                {rows.map((row) => (
-                    <StyledTableRow key={row.id}>
-                        <StyledTableCell component="th" scope="row">
-                            {row.id}
-                        </StyledTableCell>
-                        <StyledTableCell>{row.detail}</StyledTableCell>
-                        <StyledTableCell align="center">{row.quantity}</StyledTableCell>
-                        <StyledTableCell align="center">{row.price}</StyledTableCell>
-                        <StyledTableCell align="center">{row.orderdate}</StyledTableCell>
-                        <StyledTableCell align="center">{row.status}</StyledTableCell>
-                        <StyledTableCell align="center">{row.note}</StyledTableCell>
-                    </StyledTableRow>
-                ))}
-                </TableBody>
-            </Table>
-        </TableContainer>
-        <TablePagination
-          rowsPerPageOptions={[]}
-          component="div"
-          rowsPerPage={10}
-          count={10}
-          page={0}
-          onChangePage={()=>{}}
-        />
-    </div>
+          <TableContainer component={Paper}>
+              <Table className={classes.table} aria-label="customized table">
+                  <TableHead>
+                  <TableRow>
+                      <StyledTableCell>Item #</StyledTableCell>
+                      <StyledTableCell>Item Details</StyledTableCell>
+                      <StyledTableCell align="center">Qty</StyledTableCell>
+                      <StyledTableCell align="center">Price</StyledTableCell>
+                      <StyledTableCell align="center">Order Date</StyledTableCell>
+                      <StyledTableCell align="center">Order Status</StyledTableCell>
+                      <StyledTableCell align="center">Note</StyledTableCell>
+                  </TableRow>
+                  </TableHead>
+                  <TableBody>
+                  {rows.map((row) => (
+                      <StyledTableRow key={row.id}>
+                          <StyledTableCell component="th" scope="row">
+                              {row.id}
+                          </StyledTableCell>
+                          <StyledTableCell>{row.detail}</StyledTableCell>
+                          <StyledTableCell align="center">{row.quantity}</StyledTableCell>
+                          <StyledTableCell align="center">{row.price}</StyledTableCell>
+                          <StyledTableCell align="center">{row.orderdate}</StyledTableCell>
+                          <StyledTableCell align="center">{row.status}</StyledTableCell>
+                          <StyledTableCell align="center">{row.note}</StyledTableCell>
+                      </StyledTableRow>
+                  ))}
+                  </TableBody>
+              </Table>
+          </TableContainer>
+          <TablePagination
+            rowsPerPageOptions={[]}
+            component="div"
+            rowsPerPage={10}
+            count={10}
+            page={0}
+            onChangePage={()=>{}}
+          />
+      </div>
+    </PageContainer>
   );
 }
