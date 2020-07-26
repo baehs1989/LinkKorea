@@ -1,0 +1,16 @@
+.Container{
+    padding: 2rem;
+}
+
+.AddButtonContainer{
+    padding-bottom: 1rem;
+}
+
+.AddressPaper{
+    max-width:500px;
+    padding: 1rem;
+}
+
+.Title{
+    font-weight: bold;
+}

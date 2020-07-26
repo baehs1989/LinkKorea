@@ -6,8 +6,9 @@
 }
 
 *{
-  font-family: 'Inconsolata', monospace;
+  font-family: 'Inconsolata', monospace !important;
 }
+
 
 .App {
   text-align: center;

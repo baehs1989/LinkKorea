@@ -17,6 +17,7 @@ import CategoryPreview from './components/CategoryPreview/CategoryPreview'
 import SignIn from './components/SignIn/SignIn'
 import SignUp from './components/SignUp/SignUp'
 import CategoryPage from './components/CategoryPage/CategoryPage'
+import MyPage from './components/MyPage/MyPage'
 
 function App() {
   const [footer, setFooter] = useState(true)
@@ -45,6 +46,8 @@ function App() {
             <Route path="/category/:name" component={CategoryPage}/>
 
             <Route path="/product/:id" render={() => <ItemDetail toggleFooter={toggleFooter}/>}/>
+
+            <Route path="/mypage" component={MyPage}/>
 
             <Route path="/">
               <SlideShow />

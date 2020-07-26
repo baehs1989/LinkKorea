@@ -1,0 +1,13 @@
+.ToolBar{
+    padding: 10px 0;
+}
+
+.SearchInput{
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.Select > div{
+    padding: 10px 15px;
+}

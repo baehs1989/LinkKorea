@@ -115,9 +115,12 @@ export default function NavBar(props) {
                     Sign up
                 </Button> */}
 
-                <IconButton>
-                    <AccountCircleIcon/>
-                </IconButton>
+                <Link to="/mypage">
+                    <IconButton>
+                        <AccountCircleIcon/>
+                    </IconButton>
+                </Link>
+
 
                 <IconButton onClick={toggleCartBar}>
                     <StyledBadge badgeContent={10} color="secondary">
