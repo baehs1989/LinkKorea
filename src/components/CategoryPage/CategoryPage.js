@@ -1,4 +1,5 @@
 import React from 'react'
+import {useParams} from "react-router-dom";
 
 import ProductStack from '../ProductStack/ProductStack';
 import PageToolBar from '../PageToolBar/PageToolBar';
@@ -6,11 +7,13 @@ import PageToolBar from '../PageToolBar/PageToolBar';
 import styles from './CatgoryPage.module.css'
 
 export default function CategoryPage() {
+    let {name} = useParams()
+
     return (
         <div>
             <div className={styles.Header}>
                 <div className={styles.CategoryTitle}>
-                    Book
+                    {name}
                 </div>
             </div>
             <div className={styles.Body}>

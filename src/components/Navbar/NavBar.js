@@ -10,6 +10,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Drawer from '@material-ui/core/Drawer';
 import Badge from '@material-ui/core/Badge';
 import { withStyles } from '@material-ui/core/styles';
+import {Link} from 'react-router-dom'
 
 import Cart from '../Cart/Cart'
 import Category from '../Category/Category'
@@ -24,7 +25,11 @@ const useStyles = makeStyles((theme) => ({
     },
     toolbarTitle: {
       flex: 1,
-      textAlign:'left'
+      textAlign:'left',
+      "& a":{
+          textDecoration:'none',
+          color: 'inherit'
+      }
     },
     toolbarSecondary: {
       justifyContent: 'space-between',
@@ -85,7 +90,7 @@ export default function NavBar(props) {
                     noWrap
                     className={classes.toolbarTitle}
                 >
-                        {title}              
+                        <Link to="/">{title}</Link>            
                 </Typography>
 
                 {/* <Button variant="outlined" size="small">
@@ -111,7 +116,7 @@ export default function NavBar(props) {
                 onClose={toggleMenuBar}
             >
                 <div className={clsx(classes.list)}>
-                    <Category/>
+                    <Category onSelect={toggleMenuBar}/>
                 </div>
             </Drawer>
 

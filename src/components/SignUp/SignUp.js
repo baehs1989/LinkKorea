@@ -48,7 +48,7 @@ export default function SignUp() {
   return (
     <Grid container component="div" className={classes.root}>
       <Grid item xs={false} sm={4} md={7} className={classes.image} />
-      <Grid item xs={12} sm={8} md={5} component={Paper} elevation={false} square>
+      <Grid item xs={12} sm={8} md={5} component={Paper} elevation={0} square>
         <div className={classes.paper}>
             <Avatar className={classes.avatar}>
                 <LockOutlinedIcon />

@@ -3,11 +3,19 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import List from '@material-ui/core/List'
 import AppsIcon from '@material-ui/icons/Apps';
+import { useHistory } from 'react-router-dom';
 
 import styles from './Category.module.css';
 
 
-export default function Category() {
+export default function Category({onSelect}) {
+    let history = useHistory();
+
+    const onCategorySelect = (text) =>{
+        history.push('/category/'+text.toLowerCase())
+        onSelect();
+    }
+
     return (
         <div className={styles.Category}>
             <div className={styles.CategoryHeader}>
@@ -16,7 +24,7 @@ export default function Category() {
 
             <List>
                 {['Book', 'Fasion', 'Living', 'Beauty', 'Kids'].map((text, index) => (
-                    <ListItem button key={text} className={styles.CategoryItem}>
+                    <ListItem button key={text} className={styles.CategoryItem} onClick={()=>onCategorySelect(text)}>
                         <ListItemText primary={text} />
                     </ListItem>
                 ))}
