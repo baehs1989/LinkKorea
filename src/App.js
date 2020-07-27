@@ -19,6 +19,9 @@ import SignUp from './components/SignUp/SignUp'
 import CategoryPage from './components/CategoryPage/CategoryPage'
 import MyPage from './components/MyPage/MyPage'
 import Checkout from './components/Checkout/Checkout'
+import AboutUs from './components/AboutUs/AboutUs'
+import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy'
+import TermCond from './components/TermCond/TermCond'
 
 function App() {
   const [footer, setFooter] = useState(true)
@@ -51,6 +54,12 @@ function App() {
             <Route path="/mypage" component={MyPage}/>
 
             <Route path="/checkout" component={Checkout}/>
+
+            <Route path="/aboutus" component={AboutUs}/>
+
+            <Route path="/privacypolicy" component={PrivacyPolicy}/>
+
+            <Route path="/termcond" component={TermCond}/>
 
             <Route path="/">
               <SlideShow />

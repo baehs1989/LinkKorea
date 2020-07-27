@@ -1,0 +1,15 @@
+.Container{
+    padding: 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Header{
+    font-size: 1.8rem;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+}

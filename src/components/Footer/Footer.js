@@ -9,18 +9,19 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import EmailIcon from '@material-ui/icons/Email';
 import ChatBubbleIcon from '@material-ui/icons/ChatBubble';
 import CallIcon from '@material-ui/icons/Call';
+import {useHistory} from 'react-router-dom'
 
 import styles from './Footer.module.css'
 
-function Copyright() {
+function Copyright({history}) {
     return (
         <div className={styles.CopyRight} style={{textAlign:'center'}}>
             <div>
-                LinkKorea, Inc. <Link color="inherit" href="#">Terms &amp; Conditions</Link> |  <Link color="inherit" href="#">Privacy Policy</Link>
+                LinkKorea, Inc. <Link color="inherit" onClick={()=>history.push('/termcond')}>Terms &amp; Conditions</Link> |  <Link color="inherit" onClick={()=>history.push('/privacypolicy')}>Privacy Policy</Link>
             </div>
             <div>
                 {'Copyright © '}
-                <Link color="inherit" href="#">
+                <Link color="inherit" href="/">
                     LinkKorea
                 </Link>{' '}
                 {new Date().getFullYear()}
@@ -52,6 +53,8 @@ function Contacts(){
 }
 
 export default function Footer() {
+    let history = useHistory()
+
     return (
         <div className="FooterContainer">
             <Contacts/>
@@ -82,7 +85,7 @@ export default function Footer() {
                         <div className={styles.Title}>Company</div>
                         <ul className={styles.UL}>
                             <li>
-                                <Link color="inherit" href="#">About Us</Link>
+                                <Link color="inherit" onClick={()=>history.push('/aboutus')}>About Us</Link>
                             </li>
                             <li>
                                 <Link color="inherit" href="#">FAQ</Link>
@@ -116,7 +119,7 @@ export default function Footer() {
                         </IconButton>
                     </Grid>
                 </Grid>
-                <Copyright/>
+                <Copyright history={history}/>
             </Container>
         </div>
 
