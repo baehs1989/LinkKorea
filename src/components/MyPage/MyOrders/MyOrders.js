@@ -77,9 +77,10 @@ export default function CustomizedTables() {
                                       value={1}
                                       className={styles.Select}
                                   >
-                                      <MenuItem value={1}>Newest</MenuItem>
-                                      <MenuItem value={2}>Price: Low to High</MenuItem>
-                                      <MenuItem value={3}>Price: High to Low</MenuItem>
+                                      <MenuItem value={1}>ALL</MenuItem>
+                                      <MenuItem value={2}>PENDING</MenuItem>
+                                      <MenuItem value={3}>SHIPPED</MenuItem>
+                                      <MenuItem value={4}>COMPLETE</MenuItem>
                                   </Select>
                               </FormControl>
                               </td>

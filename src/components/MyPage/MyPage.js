@@ -10,6 +10,7 @@ import MyOrders from './MyOrders/MyOrders'
 import ShippingAddress from './ShippingAddress/ShippingAddress'
 import MyPoint from './MyPoint/MyPoint'
 import MyMessage from './MyMessage/MyMessage'
+import Settings from './Settings/Settings'
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -91,10 +92,7 @@ export default function ScrollableTabsButtonAuto() {
         <MyMessage/>
       </TabPanel>
       <TabPanel value={value} index={4}>
-        Reviews
-      </TabPanel>
-      <TabPanel value={value} index={5}>
-        Settings
+        <Settings/>
       </TabPanel>
     </div>
   );
