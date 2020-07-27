@@ -1,0 +1,45 @@
+.Container{
+    width: 100%;
+    padding: 1rem;
+}
+
+.Title{
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding:1rem;
+}
+
+.Table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.Image{
+    text-align: center;
+}
+
+.Table td{
+    border-top: 1px solid var(--border-light-color);
+    padding: 1.5rem 1rem;
+}
+
+.ProductName{
+    font-weight:bold;
+}
+
+.StoreName{
+    font-size:0.8rem;
+    opacity: 0.6;
+}
+
+.ShippingFee{
+    font-size:0.8rem;
+}
+
+.Quantity input{
+    width: 2rem;
+}
+
+.ActionButtons button{
+    padding:0;
+}

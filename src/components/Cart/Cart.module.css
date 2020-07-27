@@ -5,6 +5,9 @@
 .ShoppingCartHeader{
     border-bottom: 1px solid var(--border-light-color);
     padding: 15px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .Total{
@@ -38,6 +41,8 @@
 .ShoppingCartItems img{
     float:left;
     margin-right:12px;
+    width: 70px;
+    height: 70px;
 }
 
 .ShopingCartItems li{

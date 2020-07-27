@@ -18,6 +18,7 @@ import SignIn from './components/SignIn/SignIn'
 import SignUp from './components/SignUp/SignUp'
 import CategoryPage from './components/CategoryPage/CategoryPage'
 import MyPage from './components/MyPage/MyPage'
+import Checkout from './components/Checkout/Checkout'
 
 function App() {
   const [footer, setFooter] = useState(true)
@@ -48,6 +49,8 @@ function App() {
             <Route path="/product/:id" render={() => <ItemDetail toggleFooter={toggleFooter}/>}/>
 
             <Route path="/mypage" component={MyPage}/>
+
+            <Route path="/checkout" component={Checkout}/>
 
             <Route path="/">
               <SlideShow />

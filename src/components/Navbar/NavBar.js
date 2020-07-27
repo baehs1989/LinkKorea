@@ -150,7 +150,7 @@ export default function NavBar(props) {
                 onClose={toggleCartBar}
             >
                 <div className={clsx(classes.cart)}>
-                    <Cart/>
+                    <Cart onClose={toggleCartBar}/>
                 </div> 
             </Drawer>
 

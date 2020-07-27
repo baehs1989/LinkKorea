@@ -1,0 +1,41 @@
+.Container{
+    box-sizing: border-box;
+    padding-top:1rem;
+    padding-right:1rem;
+}
+
+.Table{
+    margin: 1rem 0rem;
+    border-collapse: collapse;
+}
+
+.Table td{
+    padding: 3px;
+}
+
+.SummaryTitle{
+    font-weight: bold;
+    font-size:1.5rem;
+}
+
+.SummaryHeader{
+    font-weight: bold;
+}
+
+.Divider td{
+    border-top: 1px solid var(--border-light-color);
+}
+
+.CheckoutButton button{
+    width: 100%;
+}
+
+.PromoCode td{
+    padding-top:1rem;
+}
+
+.PromoCode input{
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+}
