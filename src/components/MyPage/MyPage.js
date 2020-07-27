@@ -4,10 +4,12 @@ import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
+import Badge from '@material-ui/core/Badge';
 
 import MyOrders from './MyOrders/MyOrders'
 import ShippingAddress from './ShippingAddress/ShippingAddress'
 import MyPoint from './MyPoint/MyPoint'
+import MyMessage from './MyMessage/MyMessage'
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -72,8 +74,7 @@ export default function ScrollableTabsButtonAuto() {
           <Tab label="My Orders"/>
           <Tab label="Shipping Address"/>
           <Tab label="Points"/>
-          <Tab label="Messages"/>
-          <Tab label="Reviews"/>
+          <Tab label={<Badge color="secondary" badgeContent=" " variant="dot"><span>Messages</span></Badge>}/>
           <Tab label="Settings"/>
         </Tabs>
       </AppBar>
@@ -87,7 +88,7 @@ export default function ScrollableTabsButtonAuto() {
         <MyPoint/>
       </TabPanel>
       <TabPanel value={value} index={3}>
-        Messages
+        <MyMessage/>
       </TabPanel>
       <TabPanel value={value} index={4}>
         Reviews
