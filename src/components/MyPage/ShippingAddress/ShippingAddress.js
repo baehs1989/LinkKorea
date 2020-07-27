@@ -16,6 +16,9 @@ export default function ShippingAddress() {
     return (
         <PageContainer>
             <div className={styles.Container}>
+                <div className={styles.PageTitle}>
+                    Shipping Address
+                </div>
                 <div className={styles.AddButtonContainer}>
                     <Button onClick={()=>setFormOpen(true)} variant="contained" color="primary" style={{backgroundColor:'var(--primary-color)'}}>
                         Add New Address

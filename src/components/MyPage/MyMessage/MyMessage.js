@@ -74,6 +74,10 @@ export default function CustomizedTables() {
         <Dialog open={dialogOpen} onClose={()=>setDialogOpen(false)}/>
 
         <div className={classes.container}>
+            <div className={styles.PageTitle}>
+                Messages
+            </div>
+
             <Grid container justify="space-between" className={styles.ToolBar}>
                 <Grid item xs={false} sm={4}/>
 

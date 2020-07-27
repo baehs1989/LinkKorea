@@ -59,6 +59,9 @@ export default function CustomizedTables() {
   return (
     <PageContainer>
       <div className={classes.container}>
+        <div className={styles.PageTitle}>
+          My Orders
+        </div>
           <Grid container justify="space-between" className={styles.ToolBar}>
               <Grid item xs={12} sm={4}>
                   <input className={styles.SearchInput} type="text" placeholder={"Search"}/>

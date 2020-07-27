@@ -11,6 +11,9 @@ export default function Settings() {
             <Grid container justify="center">
                 <Grid item xs={12} sm={8}>
                     <div className={styles.Container}>
+                        <div className={styles.PageTitle}>
+                            Settings
+                        </div>
                         <table className={styles.Table}>
                             <tbody>
                                 <tr>
