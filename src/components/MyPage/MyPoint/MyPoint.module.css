@@ -1,4 +1,4 @@
-.Container{
+/* .Container{
     font-weight: bold;
     padding: 3rem 1rem;
 }
@@ -19,4 +19,84 @@
 
 .Point{
     color : var(--primary-color)
+} */
+
+.box{
+    margin: auto;
+    width: 100%;
+    perspective: 1000px;
+    display:flex;
+    justify-content: center;
+}
+.box:hover .card{
+    animation-name: vibrate;
+    animation-duration: .3s;
+}
+@keyframes vibrate{
+    0% {
+        transform: rotate(3deg);
+    }
+    25%{
+        transform: rotate(-3deg);
+    }
+    50%{
+        transform: rotate(3deg);
+    }
+    100% {
+        transform: rotate(-3deg);
+    }
+}
+.card{
+    font-family: sans-serif;
+    color: rgb(53, 51, 51);
+    background: url('/assets/images/pattern.jpg');
+    background-size: cover;
+    width: 270px;
+    height: 165px; 
+    padding: 1rem;
+    border-radius: 20px;
+    box-sizing: content-box;
+    /* border: solid 1px; */
+    opacity: 1;
+}
+.bank{
+    font-size: 1.2rem;
+}
+.chip{
+    background: #8d8d8c;
+    height: 30px;
+    width: 35px;
+    border-radius: 5px;
+    margin: 20px;
+}
+.number{
+    font-size: 1.1rem;
+}
+
+.date_box{
+    margin: 10px 40%;
+    display: flex;
+    align-items: center;
+}
+.valid{
+    font-size: 0.6rem;
+    display: flex;
+}
+.date{
+    margin-left: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+.card__footer{
+    position: relative;
+}
+.name{
+
+}
+.logo{
+    height: 30px;
+    width: 50px;
+    position: absolute;
+    right:0;
+    bottom:0;
 }
