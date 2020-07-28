@@ -64,7 +64,7 @@ export default function Notice() {
                             <StyledTableCell  align="center" component="th" scope="row">
                                 {row.id}
                             </StyledTableCell>
-                            <StyledTableCell><span onClick={setDialogOpen} style={{cursor:'pointer'}}>{row.title}</span></StyledTableCell>
+                            <StyledTableCell><span onClick={onClickMessage} style={{cursor:'pointer'}}>{row.title}</span></StyledTableCell>
                             <StyledTableCell align="center">{row.date}</StyledTableCell>
                         </StyledTableRow>
                     ))}

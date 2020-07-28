@@ -23,6 +23,7 @@ import AboutUs from './components/AboutUs/AboutUs'
 import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy'
 import TermCond from './components/TermCond/TermCond'
 import Notice from './components/Notice/Notice'
+import ComingSoon from './components/PlaceHolder/ComingSoon'
 
 function App() {
   const [footer, setFooter] = useState(true)
@@ -63,6 +64,8 @@ function App() {
             <Route path="/termcond" component={TermCond}/>
 
             <Route path="/notice" component={Notice}/>
+
+            <Route path="/reviews" component={ComingSoon}/>
 
             <Route path="/">
               <SlideShow />
