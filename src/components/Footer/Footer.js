@@ -17,7 +17,7 @@ function Copyright({history}) {
     return (
         <div className={styles.CopyRight} style={{textAlign:'center'}}>
             <div>
-                LinkKorea, Inc. <Link color="inherit" onClick={()=>history.push('/termcond')}>Terms &amp; Conditions</Link> |  <Link color="inherit" onClick={()=>history.push('/privacypolicy')}>Privacy Policy</Link>
+                LinkKorea, Inc. <Link color="inherit" href="" onClick={()=>history.push('/termcond')}>Terms &amp; Conditions</Link> |  <Link color="inherit" href="" onClick={()=>history.push('/privacypolicy')}>Privacy Policy</Link>
             </div>
             <div>
                 {'Copyright © '}
@@ -85,10 +85,10 @@ export default function Footer() {
                         <div className={styles.Title}>Company</div>
                         <ul className={styles.UL}>
                             <li>
-                                <Link color="inherit" onClick={()=>history.push('/aboutus')}>About Us</Link>
+                                <Link color="inherit" href="" onClick={()=>history.push('/aboutus')}>About Us</Link>
                             </li>
                             <li>
-                                <Link color="inherit" href="#">FAQ</Link>
+                                <Link color="inherit" href="">Reviews</Link>
                             </li>
                         </ul>
                     </Grid>
@@ -96,13 +96,13 @@ export default function Footer() {
                         <div className={styles.Title}>Customer Service</div>
                         <ul className={styles.UL}>
                             <li>
-                                <Link color="inherit" href="#">Notice</Link>
+                                <Link color="inherit" href="" onClick={()=>history.push('/notice')}>Notice</Link>
                             </li>
                             <li>
-                                <Link color="inherit" href="#">Inquiry</Link>
+                                <Link color="inherit" href="">Inquiry</Link>
                             </li>
                             <li>
-                                <Link color="inherit" href="#">Reviews</Link>
+                                <Link color="inherit" href="" onClick={()=>history.push('/termcond')}>Terms and Conditions</Link>
                             </li>
                         </ul>
                     </Grid>
