@@ -49,36 +49,43 @@ export default function Notice() {
     return (
         <DefaultPage title="Notice" width="100%">
             <Dialog open={dialogOpen} onClose={()=>setDialogOpen(false)}/>
-            <TableContainer>
-                <Table className={styles.Table} aria-label="customized table">
-                    <TableHead>
-                    <TableRow>
-                        <StyledTableCell align="center">NO.</StyledTableCell>
-                        <StyledTableCell align="center">Title</StyledTableCell>
-                        <StyledTableCell align="center">Date</StyledTableCell>
-                    </TableRow>
-                    </TableHead>
-                    <TableBody>
-                    {rows.map((row) => (
-                        <StyledTableRow key={row.id}>
-                            <StyledTableCell  align="center" component="th" scope="row">
-                                {row.id}
-                            </StyledTableCell>
-                            <StyledTableCell><span onClick={onClickMessage} style={{cursor:'pointer'}}>{row.title}</span></StyledTableCell>
-                            <StyledTableCell align="center">{row.date}</StyledTableCell>
-                        </StyledTableRow>
-                    ))}
-                    </TableBody>
-                </Table>
-            </TableContainer>
-            <TablePagination
-                rowsPerPageOptions={[]}
-                component="div"
-                rowsPerPage={10}
-                count={10}
-                page={0}
-                onChangePage={()=>{}}
-            />
+            <div className={styles.Container}>
+                <div>
+                    <TableContainer>
+                        <Table className={styles.Table} aria-label="customized table">
+                            <TableHead>
+                            <TableRow>
+                                <StyledTableCell align="center">NO.</StyledTableCell>
+                                <StyledTableCell align="center">Title</StyledTableCell>
+                                <StyledTableCell align="center">Date</StyledTableCell>
+                            </TableRow>
+                            </TableHead>
+                            <TableBody>
+                            {rows.map((row) => (
+                                <StyledTableRow key={row.id}>
+                                    <StyledTableCell  align="center" component="th" scope="row">
+                                        {row.id}
+                                    </StyledTableCell>
+                                    <StyledTableCell><span onClick={onClickMessage} style={{cursor:'pointer'}}>{row.title}</span></StyledTableCell>
+                                    <StyledTableCell align="center">{row.date}</StyledTableCell>
+                                </StyledTableRow>
+                            ))}
+                            </TableBody>
+                        </Table>
+                    </TableContainer>
+                </div>
+                <div>
+                    <TablePagination
+                        rowsPerPageOptions={[]}
+                        component="div"
+                        rowsPerPage={10}
+                        count={10}
+                        page={0}
+                        onChangePage={()=>{}}
+                    />
+                </div>
+            </div>
+
         </DefaultPage>
     )
 }

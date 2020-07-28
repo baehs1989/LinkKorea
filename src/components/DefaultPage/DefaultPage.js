@@ -10,7 +10,7 @@ export default function DefaultPage({title, children, maxWidth='100%', width=nul
                 <div className={styles.Header}>
                     {title}
                 </div>
-                <div style={{maxWidth:maxWidth, width:width}}>
+                <div style={{maxWidth:maxWidth, width:width, height:'100%'}}>
                     {children}
                 </div>
             </div>
