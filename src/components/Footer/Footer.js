@@ -40,11 +40,11 @@ function Contacts(){
                     <EmailIcon/> Email
                 </div>
             </Link>
-            <Link color="inherit" href="#">
+            {/* <Link color="inherit" href="#">
                 <div className={styles.ContactIcon}>
                     <ChatBubbleIcon/> Live Chat
                 </div>
-            </Link>
+            </Link> */}
             <Link color="inherit" href="#">
                 <div className={styles.ContactIcon}><CallIcon/> Call: 123-123-1234</div>
             </Link>
@@ -88,6 +88,9 @@ export default function Footer() {
                                 <Link color="inherit" onClick={()=>history.push('/aboutus')}>About Us</Link>
                             </li>
                             <li>
+                                <Link color="inherit" onClick={()=>history.push('/')}>Contact Us</Link>
+                            </li>
+                            <li>
                                 <Link color="inherit" onClick={()=>history.push('/reviews')}>Reviews</Link>
                             </li>
                         </ul>
@@ -99,7 +102,7 @@ export default function Footer() {
                                 <Link color="inherit" onClick={()=>history.push('/notice')}>Notice</Link>
                             </li>
                             <li>
-                                <Link color="inherit">Inquiry</Link>
+                                <Link color="inherit" onClick={()=>history.push('/')}>Inquiry</Link>
                             </li>
                             <li>
                                 <Link color="inherit" onClick={()=>history.push('/termcond')}>Terms and Conditions</Link>
