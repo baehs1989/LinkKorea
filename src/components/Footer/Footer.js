@@ -102,7 +102,7 @@ export default function Footer() {
                                 <Link color="inherit" onClick={()=>history.push('/notice')}>Notice</Link>
                             </li>
                             <li>
-                                <Link color="inherit" onClick={()=>history.push('/')}>Inquiry</Link>
+                                <Link color="inherit" onClick={()=>history.push('/inquiry')}>Inquiry</Link>
                             </li>
                             <li>
                                 <Link color="inherit" onClick={()=>history.push('/termcond')}>Terms and Conditions</Link>
