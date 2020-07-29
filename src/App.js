@@ -30,9 +30,14 @@ import OrderPage from './components/OrderPage/OrderPage'
 
 function App() {
   const [footer, setFooter] = useState(true)
+  const [authBar, setAuthBar] = useState(true)
 
   const toggleFooter = useCallback(()=>{
     setFooter(prev=>!prev)
+  }, [])
+
+  const toggleAuthBar = useCallback(()=>{
+    setAuthBar(prev=>!prev)
   }, [])
 
   document.title="링크코리아"
@@ -40,7 +45,7 @@ function App() {
   return (
       <Router>
         <ScrollToTop>
-          <NavBar title="LinkKorea"/>
+          <NavBar title="LinkKorea" authBar={authBar}/>
           
 
           <Switch>
@@ -54,7 +59,7 @@ function App() {
 
             <Route path="/category/:name" component={CategoryPage}/>
 
-            <Route path="/product/:id" render={() => <ItemDetail toggleFooter={toggleFooter}/>}/>
+            <Route path="/product/:id" render={() => <ItemDetail toggleFooter={toggleFooter} toggleAuthBar={toggleAuthBar}/>}/>
 
             <Route path="/mypage" component={MyPage}/>
 

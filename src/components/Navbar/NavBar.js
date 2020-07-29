@@ -72,7 +72,7 @@ const StyledBadge = withStyles((theme) => ({
 
 export default function NavBar(props) {
     const classes = useStyles();
-    const { title } = props;
+    const { title, authBar } = props;
     const [openMenuBar, setOpenMenuBar] = useState(false)
     const [openCartBar, setOpenCartBar] = useState(false)
 
@@ -86,10 +86,14 @@ export default function NavBar(props) {
 
     return (
         <React.Fragment>
-            <div className={classes.authBar}>
-                <Link to="/signup">Sign Up</Link>
-                <Link to="/signin">Login</Link>
-            </div>
+            {
+                authBar&&
+                <div className={classes.authBar}>
+                    <Link to="/signup">Sign Up</Link>
+                    <Link to="/signin">Login</Link>
+                </div>
+            }
+
             <Toolbar className={classes.toolbar}>
 
                 <IconButton

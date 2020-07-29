@@ -10,15 +10,17 @@ import CloseIcon from '@material-ui/icons/Close';
 import classes from './ItemDetail.module.css';
 
 
-export default function ItemDetail({toggleFooter}) {
+export default function ItemDetail({toggleFooter, toggleAuthBar}) {
     const [open, setOpen] = useState(false)
 
     useEffect(() => {
         toggleFooter();
+        toggleAuthBar();
         return () => {
-            toggleFooter()
+            toggleFooter();
+            toggleAuthBar();
         }
-    }, [toggleFooter])
+    }, [toggleFooter, toggleAuthBar])
 
     const onMyFrameLoad = () => {
         // var iframe = document.querySelector('iframe.gmarket_iframe');
