@@ -1,0 +1,13 @@
+.Container{
+    max-width:600px;
+	width:100%;
+    margin:0 auto;
+    box-sizing: border-box;
+}
+
+.Contact {
+    /* background-color:red; */
+    width: 100%;
+    padding:25px;
+    box-sizing: border-box;
+}

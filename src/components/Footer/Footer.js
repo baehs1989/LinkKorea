@@ -7,7 +7,7 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import EmailIcon from '@material-ui/icons/Email';
-import ChatBubbleIcon from '@material-ui/icons/ChatBubble';
+// import ChatBubbleIcon from '@material-ui/icons/ChatBubble';
 import CallIcon from '@material-ui/icons/Call';
 import {useHistory} from 'react-router-dom'
 
@@ -88,7 +88,7 @@ export default function Footer() {
                                 <Link color="inherit" onClick={()=>history.push('/aboutus')}>About Us</Link>
                             </li>
                             <li>
-                                <Link color="inherit" onClick={()=>history.push('/')}>Contact Us</Link>
+                                <Link color="inherit" onClick={()=>history.push('/contactus')}>Contact Us</Link>
                             </li>
                             <li>
                                 <Link color="inherit" onClick={()=>history.push('/reviews')}>Reviews</Link>
