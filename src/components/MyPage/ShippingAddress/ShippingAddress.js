@@ -7,7 +7,7 @@ import PageContainer from '../../../hoc/PageContainer'
 import DialogForm from './DialogForm/DialogForm'
 import styles from './ShippingAddress.module.css'
 
-export default function ShippingAddress() {
+export default function ShippingAddress({type}) {
     const [formOpen, setFormOpen] = useState(false)
     const onAddressAdd = () => {
         console.log("new Address added")
@@ -16,9 +16,12 @@ export default function ShippingAddress() {
     return (
         <PageContainer>
             <div className={styles.Container}>
-                <div className={styles.PageTitle}>
-                    Shipping Address
-                </div>
+                {type !== "selection" &&
+                    <div className={styles.PageTitle}>
+                        Shipping Address
+                    </div>
+                }
+
                 <div className={styles.AddButtonContainer}>
                     <Button onClick={()=>setFormOpen(true)} variant="contained" color="primary" style={{backgroundColor:'var(--primary-color)'}}>
                         Add New Address
@@ -73,8 +76,16 @@ export default function ShippingAddress() {
                                         <div>647-654-7808</div>
                                     </Grid>
                                     <Grid item container justify="flex-end" xs={12}>
-                                        <Button>Edit</Button>
-                                        <Button>Remove</Button>
+                                        {type==="selection"?
+                                            <React.Fragment>
+                                                <Button>Select</Button>
+                                            </React.Fragment>
+                                            :
+                                            <React.Fragment>
+                                                <Button>Edit</Button>
+                                                <Button>Remove</Button>
+                                            </React.Fragment>
+                                        }
                                     </Grid>
                                 </Grid>
                             </Paper>
@@ -124,8 +135,16 @@ export default function ShippingAddress() {
                                         <div>647-654-7808</div>
                                     </Grid>
                                     <Grid item container justify="flex-end" xs={12}>
-                                        <Button>Edit</Button>
-                                        <Button>Remove</Button>
+                                        {type==="selection"?
+                                            <React.Fragment>
+                                                <Button>Select</Button>
+                                            </React.Fragment>
+                                            :
+                                            <React.Fragment>
+                                                <Button>Edit</Button>
+                                                <Button>Remove</Button>
+                                            </React.Fragment>
+                                        }
                                     </Grid>
                                 </Grid>
                             </Paper>
@@ -175,8 +194,16 @@ export default function ShippingAddress() {
                                         <div>647-654-7808</div>
                                     </Grid>
                                     <Grid item container justify="flex-end" xs={12}>
-                                        <Button>Edit</Button>
-                                        <Button>Remove</Button>
+                                        {type==="selection"?
+                                            <React.Fragment>
+                                                <Button>Select</Button>
+                                            </React.Fragment>
+                                            :
+                                            <React.Fragment>
+                                                <Button>Edit</Button>
+                                                <Button>Remove</Button>
+                                            </React.Fragment>
+                                        }
                                     </Grid>
                                 </Grid>
                             </Paper>

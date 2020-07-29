@@ -10,7 +10,7 @@ import styles from './Checkout.module.css';
 function ProductInfo(){
     return (
         <tr>
-            <td className={styles.Image}><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item2.jpg" alt="item1" /></td>
+            <td className={styles.Image}><img src="https://cdn-image02.casetify.com/usr/8746/1688746/~v14/6705211_iphone11__color_white_16000268.png.560x560-w.m80.jpg" alt="item1" /></td>
             <td>
                 <div className={styles.ProductName}>Sony DSC-RX100M III</div>
                 <div className={styles.StoreName}>Gmarket</div>

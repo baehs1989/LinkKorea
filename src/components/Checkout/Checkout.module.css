@@ -43,3 +43,8 @@
 .ActionButtons button{
     padding:0;
 }
+
+.Image img{
+    width: 70px;
+    height: 70px;
+}

@@ -2,8 +2,11 @@ import React from 'react'
 import Button from '@material-ui/core/Button'
 
 import styles from './OrderSummary.module.css'
+import {useHistory} from 'react-router-dom'
 
 export default function OrderSummary() {
+    let history = useHistory()
+
     return (
         <div className={styles.Container}>
             <div className={styles.Summary}>
@@ -64,7 +67,17 @@ export default function OrderSummary() {
                 </table>
             </div>
             <div className={styles.CheckoutButton}>
-                <Button variant="contained" color="primary">Proceed to Checkout</Button>
+                <Button 
+                    variant="contained" 
+                    color="primary" 
+                    onClick={()=>history.push({
+                        pathname:'/order',
+                        state:{
+                            from:'checkout'
+                        }
+                    })}>
+                        Proceed to Checkout
+                    </Button>
             </div>    
         </div>
     )
