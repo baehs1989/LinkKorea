@@ -9,7 +9,7 @@ import {useHistory} from 'react-router-dom';
 
 import AddressForm from './AddressForm';
 import DeliveryForm from './DeliveryForm';
-import Review from './Review';
+import PaymentForm from './PaymentForm';
 
 
 import PageContainer from '../../hoc/PageContainer'
@@ -54,7 +54,7 @@ function getStepContent(step) {
     case 1:
       return <DeliveryForm />;
     case 2:
-      return <Review />;
+      return <PaymentForm />;
     default:
       throw new Error('Unknown step');
   }
