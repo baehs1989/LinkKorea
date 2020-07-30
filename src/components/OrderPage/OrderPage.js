@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const steps = ['Shipping address', 'Delivery details', 'Review your order'];
+const steps = ['Shipping address', 'Delivery details', 'Payment'];
 
 function getStepContent(step) {
   switch (step) {
@@ -111,13 +111,14 @@ export default function OrderPage() {
                                 Back
                                 </Button>
                             )}
+
                             <Button
                                 variant="contained"
                                 color="primary"
                                 onClick={handleNext}
                                 className={classes.button}
                             >
-                                {activeStep === steps.length - 1 ? 'Place order' : 'Next'}
+                                {activeStep === steps.length - 1 ? 'Pay $499' : 'Next'}
                             </Button>
                             </div>
                         </React.Fragment>
