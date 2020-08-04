@@ -10,6 +10,8 @@ import CloseIcon from '@material-ui/icons/Close';
 import classes from './ItemDetail.module.css';
 import Spinner from '../Spinner/Spinner'
 
+import APIConnector from '../../APIConnector/APIConnector'
+
 const axios = require('axios');
 
 const OptionSelector = ({options, option, value, onChange}) => {
@@ -42,6 +44,8 @@ const OptionSelector = ({options, option, value, onChange}) => {
 function reducer(options, action){
     switch(action.type){
         case "option1":
+            options = {...options}
+            options.option1 = action.payload.suboptions
             return options
         case "option2":
             options = {...options}
@@ -60,15 +64,18 @@ function reducer(options, action){
 export default function ItemDetail({toggleFooter, toggleAuthBar}) {
     const [open, setOpen] = useState(false)
     const [selectedOptions, setSelectedOptions] = useState([])
+    const [item, setItem] = useState()
     const [quantity, setQuantity] = useState(0)
 
     const [options, dispatch] = useReducer(reducer, {
         option1:[
             {
                 "Name":"Style01",
+                "AddtionalCost":1.5,
                 "SubOptions":[
                     {
                         "Name":"1",
+                        "AddtionalCost":-0.5,
                         "SubOptions":[
                             {
                                 "Name":"Red"
@@ -122,19 +129,25 @@ export default function ItemDetail({toggleFooter, toggleAuthBar}) {
         option3:[]
     })
 
-    // useEffect(()=>{
-    //     axios.get('http://127.0.0.1:8000/api/item/3/')
-    //     .then(function (result) {
-    //         // handle success
-    //         setItem(result.data)
-    //         setOptions(JSON.parse(result.data.options))
-    //     })
-    //     .catch(function (error) {
-    //         // handle error
-    //         console.log(error);
-    //     })
-      
-    // },[])
+    useEffect(()=>{
+        // axios.get('http://127.0.0.1:8000/api/item/4/')
+        // .then(function (result) {
+        //     // handle success
+        //     setItem(result.data)
+        //     console.log(result)
+        //     dispatch({type:`option1`, payload:{suboptions:JSON.parse(result.data.options)}})
+        // })
+        // .catch(function (error) {
+        //     // handle error
+        //     console.log(error);
+        // })
+        APIConnector.getItemByID(4).then(result => {
+            setItem(result)
+            dispatch({type:`option1`, payload:{suboptions:JSON.parse(result.options)}})
+        }).catch(error=>
+            console.log(error)
+        )
+    },[])
 
     useEffect(() => {
         toggleFooter();
@@ -186,9 +199,9 @@ export default function ItemDetail({toggleFooter, toggleAuthBar}) {
 
     }
 
-    // if (!item){
-    //     return <Spinner/>
-    // }
+    if (!item){
+        return <Spinner/>
+    }
 
     return (
       <div>
@@ -196,7 +209,7 @@ export default function ItemDetail({toggleFooter, toggleAuthBar}) {
             title="gmarket"
             className="gmarket_iframe"
             style={{width:'100%', height:'90vh'}}
-            src="http://item.gmarket.co.kr/detailview/Item.asp?goodscode=1513973750&pos_shop_cd=GE&pos_class_cd=100000003&pos_class_kind=L"
+            src={item.url}
         />
 
         <div className={classes.AddCartButton_Outer_Container}>
@@ -206,10 +219,10 @@ export default function ItemDetail({toggleFooter, toggleAuthBar}) {
                 </div>
                 
                 <div className={classes.Item_Title}>
-                    {/* {item.name} */}
+                    {item.name}
                 </div>
                 <div className={classes.Item_Price}>
-                    {/* {item.price} */}
+                    CA${item.price}
                 </div>
 
                 {

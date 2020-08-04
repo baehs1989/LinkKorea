@@ -25,11 +25,14 @@
 .Item_Title{
     padding:10px;
     width: 400px;
+    font-size: 1.2rem;
 }
 
 .Item_Price{
     padding:10px;
     width: 400px;
+    font-size: 1.1rem;
+    font-weight: bold;
 }
 
 .Option{
