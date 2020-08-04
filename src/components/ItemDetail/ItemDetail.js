@@ -12,8 +12,6 @@ import Spinner from '../Spinner/Spinner'
 
 import APIConnector from '../../APIConnector/APIConnector'
 
-const axios = require('axios');
-
 const OptionSelector = ({options, option, value, onChange}) => {
 
     const handleChange = (event) => {

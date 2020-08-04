@@ -1,4 +1,4 @@
-import React, {useState, useCallback} from 'react';
+import React, {useState, useCallback, useEffect} from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -27,10 +27,13 @@ import ComingSoon from './components/PlaceHolder/ComingSoon'
 import ContactUs from './components/ContactUs/ContactUs'
 import Inquiry from './components/Inquiry/Inquiry'
 import OrderPage from './components/OrderPage/OrderPage'
+import {UserProvider} from './Context/Context'
+import APIConnector from './APIConnector/APIConnector'
 
 function App() {
   const [footer, setFooter] = useState(true)
   const [authBar, setAuthBar] = useState(true)
+  const [categories, setCategories] = useState([])
 
   const toggleFooter = useCallback(()=>{
     setFooter(prev=>!prev)
@@ -40,9 +43,17 @@ function App() {
     setAuthBar(prev=>!prev)
   }, [])
 
+  useEffect(()=>{
+    APIConnector.getActiveCategory().then(result => {
+      let menu = result.data.map(i => i.name)
+      setCategories(menu)
+    })
+  }, [])
+
   document.title="링크코리아"
 
   return (
+    <UserProvider value={{categories:categories}}>
       <Router>
         <ScrollToTop>
           <NavBar title="LinkKorea" authBar={authBar}/>
@@ -97,7 +108,7 @@ function App() {
 
         
       </Router>
-      
+    </UserProvider>
   )
 }
 

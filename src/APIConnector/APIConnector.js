@@ -7,7 +7,7 @@ const test_mode = true
 const getItemByID = async (id) => {
     return axios.get(api_endpoint + "item/" + id +"/").then(function (result) {
         // handle success
-        console.log(JSON.stringify(result.data))
+        // console.log(JSON.stringify(result.data))
         return result.data
     })
     .catch(function (error) {
@@ -19,7 +19,17 @@ const getItemByID = async (id) => {
     })
 }
 
+const getActiveCategory = async () => {
+    return axios.get(api_endpoint + "category/?isactive=True").then(result =>{
+        return result.data
+    }).catch(error => {
+        if (test_mode) return {"data":[{"id":5,"name":"Fashion"},{"id":6,"name":"Living"},{"id":7,"name":"Beauty"},{"id":8,"name":"Kid"}]}
+        return new Error(error)
+    })
+}
+
 
 export default {
-    getItemByID
+    getItemByID,
+    getActiveCategory
 }

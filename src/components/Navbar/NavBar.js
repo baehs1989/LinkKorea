@@ -145,9 +145,6 @@ export default function NavBar(props) {
                 </div>
             </Drawer>
 
-
-
-
             <Drawer
                 anchor="right"
                 open={openCartBar}
