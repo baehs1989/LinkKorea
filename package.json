@@ -16,7 +16,8 @@
     "react-router-dom": "^5.2.0",
     "react-router-scroll-top": "^0.2.1",
     "react-scripts": "3.4.1",
-    "react-slideshow-image": "^2.0.2"
+    "react-slideshow-image": "^2.0.2",
+    "react-spinners": "^0.9.0"
   },
   "scripts": {
     "start": "react-scripts start",
