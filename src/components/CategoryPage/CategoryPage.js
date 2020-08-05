@@ -1,11 +1,13 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import {useParams} from "react-router-dom";
+import {useHistory} from 'react-router-dom'
 
 import PageContainer from '../../hoc/PageContainer'
 import ProductStack from '../ProductStack/ProductStack';
 import PageToolBar from '../PageToolBar/PageToolBar';
 
 import styles from './CatgoryPage.module.css'
+import UserContext from '../../Context/Context'
 
 const styleMapp={
     'book':{
@@ -30,6 +32,12 @@ const styleMapp={
 
 export default function CategoryPage() {
     let {name} = useParams()
+    let categories = useContext(UserContext).categories.map(category=>category.toLowerCase())
+    const history = useHistory()
+
+    if (! categories.includes(name)){
+        history.push('/')
+    }
 
     return (
         <PageContainer>

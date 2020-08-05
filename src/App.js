@@ -29,11 +29,13 @@ import Inquiry from './components/Inquiry/Inquiry'
 import OrderPage from './components/OrderPage/OrderPage'
 import {UserProvider} from './Context/Context'
 import APIConnector from './APIConnector/APIConnector'
+import Spinner from './components/Spinner/Spinner'
 
 function App() {
   const [footer, setFooter] = useState(true)
   const [authBar, setAuthBar] = useState(true)
   const [categories, setCategories] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
 
   const toggleFooter = useCallback(()=>{
     setFooter(prev=>!prev)
@@ -47,10 +49,21 @@ function App() {
     APIConnector.getActiveCategory().then(result => {
       let menu = result.data.map(i => i.name)
       setCategories(menu)
+      setIsLoading(false)
     })
   }, [])
 
   document.title="링크코리아"
+
+
+  if (isLoading){
+    return(
+      <div style={{height:'100vh', display:'flex', alignItems:'center', justifyContent:'center'}}>
+        <Spinner/>
+      </div>
+    )
+  }
+
 
   return (
     <UserProvider value={{categories:categories}}>
