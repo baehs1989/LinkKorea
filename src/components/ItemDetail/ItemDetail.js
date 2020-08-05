@@ -28,7 +28,7 @@ const OptionSelector = ({options, option, value, onChange}) => {
                 onChange={handleChange}
             >
                 <MenuItem value="">
-                    <em>No Option</em>
+                    <em>Select Option</em>
                 </MenuItem>
 
                 {options.map((option, index)=>{
@@ -132,6 +132,7 @@ export default function ItemDetail({toggleFooter, toggleAuthBar}) {
 
     useEffect(()=>{
         APIConnector.getItemByID(id).then(result => {
+            console.log(result)
             setItem(result)
             dispatch({type:`option1`, payload:{suboptions:JSON.parse(result.options)}})
         }).catch(error=>
@@ -212,7 +213,7 @@ export default function ItemDetail({toggleFooter, toggleAuthBar}) {
                     {item.name}
                 </div>
                 <div className={classes.Item_Price}>
-                    CA${item.price}
+                    {item.price}
                 </div>
 
                 {
