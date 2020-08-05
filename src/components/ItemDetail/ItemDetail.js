@@ -69,70 +69,13 @@ export default function ItemDetail({toggleFooter, toggleAuthBar}) {
     let {id} = useParams()
 
     const [options, dispatch] = useReducer(reducer, {
-        option1:[
-            {
-                "Name":"Style01",
-                "AddtionalCost":1.5,
-                "SubOptions":[
-                    {
-                        "Name":"1",
-                        "AddtionalCost":-0.5,
-                        "SubOptions":[
-                            {
-                                "Name":"Red"
-                            }
-                        ]
-                    },
-                    {
-                        "Name":"2",
-                        "SubOptions":[
-                            {
-                                "Name":"Red"
-                            }
-                        ]
-                    },
-                    {
-                        "Name":"3",
-                        "SubOptions":[
-                            {
-                                "Name":"Red"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "Name":"Style02",
-                "SubOptions":[
-                    {
-                        "Name":"4",
-                        "SubOptions":[
-                            {
-                                "Name":"Red"
-                            },
-                            {
-                                "Name":"Green"
-                            }
-                        ]
-                    },
-                    {
-                        "Name":"5",
-                        "SubOptions":[
-                            {
-                                "Name":"Red"
-                            }
-                        ]
-                    },
-                ]
-            }
-        ],
+        option1:[],
         option2:[],
         option3:[]
     })
 
     useEffect(()=>{
         APIConnector.getItemByID(id).then(result => {
-            console.log(result)
             setItem(result)
             dispatch({type:`option1`, payload:{suboptions:JSON.parse(result.options)}})
         }).catch(error=>
