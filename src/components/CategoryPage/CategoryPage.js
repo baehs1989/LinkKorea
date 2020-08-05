@@ -26,6 +26,10 @@ const styleMapp={
     },
     'kids':{
         backgroundPosition: "center 30%",
+    },
+    'pets':{
+        backgroundPosition: "center 50%",
+        color:'white'
     }
 
 }

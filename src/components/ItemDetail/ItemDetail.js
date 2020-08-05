@@ -6,6 +6,7 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import TextField from '@material-ui/core/TextField';
 import CloseIcon from '@material-ui/icons/Close';
+import {useParams} from "react-router-dom";
 
 import classes from './ItemDetail.module.css';
 import Spinner from '../Spinner/Spinner'
@@ -64,6 +65,8 @@ export default function ItemDetail({toggleFooter, toggleAuthBar}) {
     const [selectedOptions, setSelectedOptions] = useState([])
     const [item, setItem] = useState()
     const [quantity, setQuantity] = useState(0)
+
+    let {id} = useParams()
 
     const [options, dispatch] = useReducer(reducer, {
         option1:[
@@ -128,18 +131,7 @@ export default function ItemDetail({toggleFooter, toggleAuthBar}) {
     })
 
     useEffect(()=>{
-        // axios.get('http://127.0.0.1:8000/api/item/4/')
-        // .then(function (result) {
-        //     // handle success
-        //     setItem(result.data)
-        //     console.log(result)
-        //     dispatch({type:`option1`, payload:{suboptions:JSON.parse(result.data.options)}})
-        // })
-        // .catch(function (error) {
-        //     // handle error
-        //     console.log(error);
-        // })
-        APIConnector.getItemByID(4).then(result => {
+        APIConnector.getItemByID(id).then(result => {
             setItem(result)
             dispatch({type:`option1`, payload:{suboptions:JSON.parse(result.options)}})
         }).catch(error=>

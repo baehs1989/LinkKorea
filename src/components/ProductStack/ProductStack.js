@@ -7,10 +7,10 @@ import APIConnector from '../../APIConnector/APIConnector'
 import PulseLoader from '../Spinner/PulseLoader'
 
 
-const ProductCardContainer = () => {
+const ProductCardContainer = ({item}) => {
     return (
         <div className={styles.Card}>
-            <ProductCard/>
+            <ProductCard item={item}/>
         </div>
     )
 }
@@ -43,7 +43,7 @@ export default function ProductStack({category, limit}) {
     return (
         <div className={styles.Cards}>
             {items.map((item, index)=>{
-                return <ProductCardContainer key={index}/>
+                return <ProductCardContainer item={item} key={index}/>
             })}
         </div>
     )
