@@ -98,6 +98,17 @@ export default function ItemDetail({toggleFooter, toggleAuthBar}) {
             return
         }
         console.log(quantity)
+        console.log(options)
+
+
+
+        let mandatoryOptionCounts = Object.keys(options).filter(option=>options[option].length > 0).length
+
+        if (mandatoryOptionCounts !== selectedOptions.length){
+            console.log("Error. Need to select all options")
+            return
+        }
+
         console.log(options.option1[selectedOptions[0]])
         console.log(options.option2[selectedOptions[1]])
         console.log(options.option3[selectedOptions[2]])
