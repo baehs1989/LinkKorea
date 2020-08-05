@@ -36,6 +36,7 @@ function App() {
   const [authBar, setAuthBar] = useState(true)
   const [categories, setCategories] = useState([])
   const [isLoading, setIsLoading] = useState(true)
+  const [categoryMap, setCategoryMap] = useState({})
 
   const toggleFooter = useCallback(()=>{
     setFooter(prev=>!prev)
@@ -47,7 +48,12 @@ function App() {
 
   useEffect(()=>{
     APIConnector.getActiveCategory().then(result => {
-      let menu = result.data.map(i => i.name)
+      let categoryMap = {}
+      let menu = result.data.map(i => {
+        categoryMap[i.name.toLowerCase()] = i.id
+        return i.name
+      })
+      setCategoryMap(categoryMap)
       setCategories(menu)
       setIsLoading(false)
     })
@@ -66,7 +72,7 @@ function App() {
 
 
   return (
-    <UserProvider value={{categories:categories}}>
+    <UserProvider value={{categories:categories, categoryMap:categoryMap}}>
       <Router>
         <ScrollToTop>
           <NavBar title="LinkKorea" authBar={authBar}/>
@@ -109,8 +115,10 @@ function App() {
 
             <Route path="/">
               <SlideShow />
-              <CategoryPreview/>
-              <CategoryPreview/>
+              {categories.map(category=>{
+                return <CategoryPreview key={category} category={category}/>
+              })}
+
             </Route>
           </Switch>
 

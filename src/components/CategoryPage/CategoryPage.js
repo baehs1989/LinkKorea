@@ -1,4 +1,4 @@
-import React,{useContext} from 'react'
+import React,{useContext, useEffect,useState} from 'react'
 import {useParams} from "react-router-dom";
 import {useHistory} from 'react-router-dom'
 
@@ -32,12 +32,17 @@ const styleMapp={
 
 export default function CategoryPage() {
     let {name} = useParams()
+    const [category, setCategory] = useState(name)
     let categories = useContext(UserContext).categories.map(category=>category.toLowerCase())
     const history = useHistory()
 
     if (! categories.includes(name)){
         history.push('/')
     }
+
+    useEffect(()=>{
+        setCategory(name)
+    },[name])
 
     return (
         <PageContainer>
@@ -47,7 +52,7 @@ export default function CategoryPage() {
 
                     </div>
                     <div className={styles.CategoryTitle}>
-                        {name}
+                        {category}
                     </div>
                 </div>
                 <div className={styles.Body}>
@@ -55,7 +60,7 @@ export default function CategoryPage() {
                         <PageToolBar/>
                     </div>
                     <div className={styles.ProductList}>
-                        <ProductStack/>
+                        <ProductStack category={category}/>
                     </div>
                 </div>
 
