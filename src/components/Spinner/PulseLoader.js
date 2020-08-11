@@ -1,6 +1,7 @@
 import React from "react";
 import { css } from "@emotion/core";
 import ClipLoader from "react-spinners/PulseLoader";
+import styles from './PulseLoader.module.scss'
  
 // Can be a string as well. Need to ensure each key-value pair ends with ;
 const override = css`
@@ -19,7 +20,7 @@ class Spinner2 extends React.Component {
  
   render() {
     return (
-        <div>
+        <div className={styles.Container}>
             <ClipLoader
             css={override}
             size={10}

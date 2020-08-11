@@ -4,6 +4,21 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+import {createStore, applyMiddleware, compose, combineReducers} from 'redux';
+import {Provider} from 'react-redux';
+import thunk from 'redux-thunk';
+
+import cartReducer from './store/reducers/cart'
+
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+const rootReducer = combineReducers({
+  cart: cartReducer
+});
+
+const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))
+
 // ReactDOM.render(
 //   <React.StrictMode>
 //     <App />
@@ -12,9 +27,9 @@ import * as serviceWorker from './serviceWorker';
 // );
 
 ReactDOM.render(
-  <React.Fragment>
-    <App />
-  </React.Fragment>,
+  <Provider store={store}>
+     <App />
+  </Provider>,
   document.getElementById('root')
 );
 

@@ -3,11 +3,15 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import {useHistory} from 'react-router-dom'
+import {connect} from 'react-redux';
 
 import styles from './Cart.module.css';
+import * as cartActions from '../../store/actions/cart'
 
-export default function Cart({onClose}) {
+function Cart({onClose, items, onAddItem}) {
     const history = useHistory()
+
+    console.log(items)
 
     const onClickCheckout = () =>{
         onClose()
@@ -96,8 +100,26 @@ export default function Cart({onClose}) {
                 <Button variant="contained" color="primary" onClick={onClickCheckout}>
                     Checkout
                 </Button>
+                <Button variant="contained" color="primary" onClick={()=>onAddItem({test:"test"})}>
+                    test
+                </Button>
             </div>
 
         </div> 
     )
 }
+
+const mapStateToProps = state => {
+    return {
+        items: state.cart.items
+    }
+}
+
+const mapDispatchToProp = dispatch => {
+    return {
+        onAddItem:(item)=>dispatch(cartActions.addItem(item))
+    }
+}
+
+
+export default connect(mapStateToProps,mapDispatchToProp)(Cart)

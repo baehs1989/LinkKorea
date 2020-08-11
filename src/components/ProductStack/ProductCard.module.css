@@ -25,6 +25,7 @@
     /* width: 100%; */
     /* height: 280px; */
     position: relative;
+    text-align: center;
 }
 
 .Image{
@@ -54,10 +55,12 @@
     font-size: 0.9rem;
     padding-top:10px;
     padding-bottom:10px;
+    text-align: center;
 }
 
 .Descriptions{
     font-size:0.8rem;
+    padding:1rem;
     padding-bottom: 10px;
 }
 
